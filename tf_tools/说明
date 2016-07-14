@@ -1,0 +1,13 @@
+在使用tf_tools工具时，请进入该目录下进行。
+
+进入该目录后执行脚本sd_fusing.sh即可。
+
+注意：执行sd_fusing.sh脚本后面需要一个参数，该参数如/dev/sd*，其中*指的是TF所代表的英文字母，一般为a、b、c、d、e、f、g等等，具体的字母跟宿主机挂在的硬盘和移动存储数量有关。
+
+为了防止误操作我们在脚本中做了一个判断，即这句if [ $1 = $reader_type1 ]，reader_type1被设置为"/dev/sdj"，比较大，为的是防止新手不懂时，导致顺坏宿主机的磁盘。当if [ $1 = $reader_type1 ]这句为假时（也就是sd_fusing.sh带的参数与reader_type1不相等时），什么也不会做，直接退出脚本，并提示Please check the TF card device number.
+
+所以在使用时务必保证sd_fusing.sh带的参数与reader_type1相同。
+
+在使用该功能时一定要查看清楚TF的设备号是多少。
+
+由于误操作导致的问题，我们不予负责，请各位朋友小心操作。
